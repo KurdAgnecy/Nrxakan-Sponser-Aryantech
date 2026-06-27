@@ -50,11 +50,13 @@
                 radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
             background-attachment: fixed;
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', Tahoma, Arial, sans-serif; /* بەکارهێنانی فۆنتی جێگرەوەش بۆ دڵنیایی */
             color: var(--text-main);
             padding: 20px 15px;
             line-height: 1.6;
             min-height: 100vh;
+            text-rendering: optimizeLegibility; /* یارمەتیدەرە بۆ جوانتر لکاندنی پیتە کوردییەکان */
+            font-variant-ligatures: normal;
         }
 
         .container {
@@ -77,7 +79,7 @@
         .brand-name {
             font-size: 2.2rem;
             font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 2px; /* تەنیا بۆ ئینگلیزی کێشە نییە */
             text-transform: uppercase;
             background: var(--gradient-main);
             -webkit-background-clip: text;
@@ -105,6 +107,7 @@
             display: inline-block;
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            letter-spacing: normal;
         }
 
         /* Terminal Instruction Banner -> Modern Alert */
@@ -124,6 +127,7 @@
             justify-content: center;
             gap: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            letter-spacing: normal;
         }
         
         .hand-pointer {
@@ -164,6 +168,7 @@
             gap: 10px;
             backdrop-filter: blur(5px);
             font-family: inherit;
+            letter-spacing: normal;
         }
 
         .tab-btn svg { width: 20px; height: 20px; transition: 0.3s; fill: currentColor; }
@@ -209,9 +214,10 @@
             font-size: 0.95rem;
             margin-bottom: 25px;
             color: var(--text-muted);
-            text-align: justify;
+            text-align: right; /* justify لادرا بۆ ئەوەی پیتەکان نەپچڕێن */
             line-height: 1.8;
             font-weight: 600;
+            letter-spacing: normal;
         }
 
         .notice-badge-red {
@@ -223,9 +229,10 @@
             font-size: 0.95rem;
             margin-top: 25px;
             color: #fca5a5;
-            text-align: justify;
+            text-align: right; /* justify لادرا بۆ ئەوەی پیتەکان نەپچڕێن */
             font-weight: 600;
             line-height: 1.8;
+            letter-spacing: normal;
         }
 
         .custom-request-badge {
@@ -239,6 +246,7 @@
             padding: 16px;
             font-size: 1rem;
             box-shadow: 0 4px 15px rgba(234, 179, 8, 0.05);
+            letter-spacing: normal; /* گۆڕدرا بۆ نۆرماڵ تا پیتەکان لێک جیا نەبنەوە */
         }
 
         /* Modern Cards */
@@ -283,6 +291,7 @@
             text-align: right; 
             flex-grow: 1;
             padding-left: 15px;
+            min-width: 0; /* ڕێگری دەکات لە تێکچوونی شاشەی بچووک */
         }
         
         .card-title { 
@@ -290,8 +299,19 @@
             font-weight: 700; 
             color: #ffffff;
             direction: rtl;
+            word-wrap: break-word;
+            line-height: 1.4;
+            letter-spacing: normal;
         }
-        .card-sub { font-size: 0.9rem; color: var(--text-muted); margin-top: 4px; font-weight: 600;}
+        .card-sub { 
+            font-size: 0.9rem; 
+            color: var(--text-muted); 
+            margin-top: 4px; 
+            font-weight: 600;
+            word-wrap: break-word;
+            line-height: 1.4;
+            letter-spacing: normal;
+        }
 
         .card-line {
             width: 1px;
@@ -305,13 +325,14 @@
             padding: 8px 16px;
             font-weight: 700;
             font-size: 1.05rem;
-            white-space: nowrap;
             background: rgba(59, 130, 246, 0.1);
             border-radius: 50px;
             direction: ltr;
             text-align: center;
             min-width: 110px;
             border: 1px solid rgba(59, 130, 246, 0.2);
+            flex-shrink: 0;
+            letter-spacing: normal;
         }
 
         /* Service Cards */
@@ -340,8 +361,8 @@
             padding: 12px;
             border-radius: 16px;
         }
-        .service-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #fff; }
-        .service-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; font-weight: 600; }
+        .service-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: #fff; letter-spacing: normal;}
+        .service-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; font-weight: 600; letter-spacing: normal;}
 
         /* Payment Section */
         .payment-box { width: 100%; }
@@ -351,6 +372,8 @@
             text-align: center; 
             margin-bottom: 25px; 
             color: #fff; 
+            text-transform: uppercase;
+            letter-spacing: normal; /* گۆڕدرا بۆ نۆرماڵ تا پیتە کوردییەکان نەپچڕێن */
         }
         .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
         
@@ -369,6 +392,7 @@
             cursor: pointer; 
             text-decoration: none; 
             transition: all 0.3s;
+            letter-spacing: normal;
         }
 
         .payment-item:hover { transform: translateY(-3px); }
@@ -409,7 +433,7 @@
             direction: ltr; 
             margin-top: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            letter-spacing: 1px;
+            letter-spacing: 1px; /* تەنیا بۆ ژمارەکان کێشە نییە */
         }
         .payment-number-box svg { fill: #60a5fa; }
 
@@ -420,7 +444,7 @@
             margin-top: 50px; 
             padding-bottom: 20px;
             font-weight: 600;
-            letter-spacing: 1px; 
+            letter-spacing: 1px; /* تەنیا بۆ ئینگلیزی کێشە نییە */
         }
     </style>
 </head>
@@ -496,7 +520,7 @@
                     <div class="card-line"></div>
                     <div class="card-price">25,000 IQD</div>
                 </a>
-                <a href="https://wa.me/9647729585559?text=داواکاری%20تیکtۆک%20بزنس:%20٤٠،٠٠٠%20بۆ%20٦٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
+                <a href="https://wa.me/9647729585559?text=داواکاری%20تیکتۆک%20بزنس:%20٤٠،٠٠٠%20بۆ%20٦٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
                     <div class="card-info">
                         <span class="card-title">٤٠،٠٠٠ بۆ ٦٠،٠٠٠ بینەر</span>
                         <span class="card-sub">بۆ فرۆشتن و کار و بزنس</span>
